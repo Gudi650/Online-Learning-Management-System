@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Settings - EduManage</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .icon { display:inline-block; vertical-align:middle }
+    .icon svg { display:block }
+  </style>
+</head>
+<body class="bg-slate-50 min-h-screen text-slate-800">
+  <!-- Mobile Menu Button -->
+  <button id="mobile-menu-btn" class="lg:hidden fixed top-4 left-4 z-60 p-2 bg-white rounded-lg shadow-md">
+    <span id="mobile-icon">&#9776;</span>
+  </button>
+  <div id="mobile-overlay" class="hidden lg:hidden fixed inset-0 bg-black bg-opacity-50 z-30"></div>
+
+  <!-- Sidebar (same as dashboard) -->
+  <aside id="app-sidebar" class="fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-slate-200 transform transition-transform duration-300 ease-in-out -translate-x-full lg:translate-x-0">
+    <div class="flex flex-col h-full">
+      <div class="py-3 px-6 border-b border-slate-200">
+        <h2 class="text-xl font-bold text-blue-600">EduManage</h2>
+        <p class="text-sm text-slate-500 mt-0.5">Teacher Portal</p>
+      </div>
+      <nav id="sidebar-nav" class="flex-1 p-4 space-y-1">
+        <a href="dashboard.html" data-path="dashboard.html" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 text-slate-700 hover:bg-slate-50">
+          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="8" rx="1" ry="1"/><rect x="14" y="3" width="7" height="5" rx="1" ry="1"/><rect x="14" y="12" width="7" height="9" rx="1" ry="1"/><rect x="3" y="12" width="7" height="9" rx="1" ry="1"/></svg></span>
+          <span class="font-medium">Dashboard</span>
+        </a>
+        <a href="schedule.html" data-path="schedule.html" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 text-slate-700 hover:bg-slate-50">
+          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+          <span class="font-medium">Schedule</span>
+        </a>
+        <a href="students.html" data-path="students.html" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 text-slate-700 hover:bg-slate-50">
+          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+          <span class="font-medium">Students</span>
+        </a>
+        <a href="courses.html" data-path="courses.html" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 text-slate-700 hover:bg-slate-50">
+          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v12a0 0 0 0 1 0 0H2z"/><path d="M22 7a4 4 0 0 0-4-4"/></svg></span>
+          <span class="font-medium">Courses</span>
+        </a>
+        <a href="settings.html" data-path="settings.html" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 text-slate-700 hover:bg-slate-50">
+          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06"/></svg></span>
+          <span class="font-medium">Settings</span>
+        </a>
+      </nav>
+
+      <div class="p-4 border-t border-slate-200 mt-auto">
+        <button id="logout-btn" class="w-full flex items-center space-x-3 px-4 py-2 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors">
+          <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><polyline points="21 12 9 12"/></svg></span>
+          <span>Logout</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <div class="p-4 md:p-6 lg:pl-64">
+    <div class="max-w-4xl mx-auto">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-slate-900 mb-2">Settings</h1>
+      <p class="text-slate-600">Manage your account and preferences</p>
+    </div>
+
+    <!-- Profile summary (polish header for professional look) -->
+    <div class="mb-6">
+      <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-4 flex items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 rounded-full bg-blue-600 text-white flex items-center justify-center text-lg font-bold">JD</div>
+          <div>
+            <div class="text-lg font-semibold text-slate-900">John Doe</div>
+            <div class="text-sm text-slate-500">john.doe@school.edu</div>
+          </div>
+        </div>
+        <div class="hidden sm:flex items-center gap-3">
+          <button id="saveTopBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-md shadow-md hover:shadow-lg transition">Save Changes</button>
+          <button id="logoutTop" class="px-3 py-2 rounded-md border border-slate-200 bg-white text-slate-700 hover:bg-slate-50">Logout</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <!-- Profile Settings -->
+      <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-shadow">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="bg-blue-100 p-2 rounded-lg">
+            <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+          </div>
+          <div class="flex items-center">
+            <span class="w-1.5 h-6 bg-blue-600 rounded mr-3"></span>
+            <h2 class="text-xl font-bold text-slate-900">Profile Information</h2>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-2">Full Name</label>
+              <input id="fullName" type="text" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
+              <input id="email" type="email" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition" />
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
+              <input id="phone" type="tel" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-2">Subject</label>
+              <input id="subject" type="text" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notifications -->
+      <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-shadow">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="bg-blue-100 p-2 rounded-lg">
+            <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13.73 21a2 2 0 0 1-3.46 0"/><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/></svg></span>
+          </div>
+          <div class="flex items-center">
+            <span class="w-1.5 h-6 bg-blue-600 rounded mr-3"></span>
+            <h2 class="text-xl font-bold text-slate-900">Notifications</h2>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <label class="flex items-center justify-between p-4 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50 transition">
+            <div>
+              <p class="font-medium text-slate-900">Email Notifications</p>
+              <p class="text-sm text-slate-500">Receive email updates about your schedule</p>
+            </div>
+            <input id="emailNotifications" type="checkbox" class="w-5 h-5 text-blue-600 border-slate-300 rounded focus:ring-blue-500" />
+          </label>
+          <label class="flex items-center justify-between p-4 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50 transition">
+            <div>
+              <p class="font-medium text-slate-900">Meeting Reminders</p>
+              <p class="text-sm text-slate-500">Get reminders before scheduled meetings</p>
+            </div>
+            <input id="meetingReminders" type="checkbox" class="w-5 h-5 text-blue-600 border-slate-300 rounded focus:ring-blue-500" />
+          </label>
+        </div>
+      </div>
+
+      <!-- Appearance -->
+      <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-shadow">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="bg-purple-100 p-2 rounded-lg">
+            <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+          </div>
+          <div class="flex items-center">
+            <span class="w-1.5 h-6 bg-purple-600 rounded mr-3"></span>
+            <h2 class="text-xl font-bold text-slate-900">Appearance</h2>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <label class="flex items-center justify-between p-4 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50 transition">
+            <div>
+              <p class="font-medium text-slate-900">Dark Mode</p>
+              <p class="text-sm text-slate-500">Switch to dark theme</p>
+            </div>
+            <input id="darkMode" type="checkbox" class="w-5 h-5 text-blue-600 border-slate-300 rounded focus:ring-blue-500" />
+          </label>
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-2">
+              <span class="icon inline mr-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3"/></svg></span>
+              Language
+            </label>
+            <select id="language" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition">
+              <option value="en">English</option>
+              <option value="es">Spanish</option>
+              <option value="fr">French</option>
+              <option value="de">German</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Security -->
+      <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-shadow">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="bg-orange-100 p-2 rounded-lg">
+            <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+          </div>
+          <div class="flex items-center">
+            <span class="w-1.5 h-6 bg-orange-500 rounded mr-3"></span>
+            <h2 class="text-xl font-bold text-slate-900">Security</h2>
+          </div>
+        </div>
+        <button id="changePassword" class="w-full bg-slate-50 hover:bg-slate-100 text-slate-700 font-medium py-3 rounded-lg transition-colors">Change Password</button>
+      </div>
+
+      <!-- Save -->
+      <div class="flex justify-end">
+        <button id="saveBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-3 rounded-lg transition-colors flex items-center space-x-2 shadow-md hover:shadow-lg">
+          <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11l5 5v9a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg></span>
+          <span>Save Changes</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Change Password Modal -->
+  <div id="changePasswordModal" class="fixed inset-0 z-60 hidden items-center justify-center">
+    <div id="changePasswordOverlay" class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="relative bg-white rounded-lg shadow-lg w-full max-w-md mx-4 p-6 z-10">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-lg font-semibold text-slate-900">Change Password</h3>
+        <button id="closeChangePassword" class="text-slate-400 hover:text-slate-600">✕</button>
+      </div>
+      <form id="changePasswordForm" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Current Password</label>
+          <input id="currentPassword" type="password" class="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" autocomplete="current-password" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">New Password</label>
+          <input id="newPassword" type="password" class="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" autocomplete="new-password" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Confirm New Password</label>
+          <input id="confirmPassword" type="password" class="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" autocomplete="new-password" />
+        </div>
+        <div class="flex items-center justify-end gap-3">
+          <button type="button" id="cpCancelBtn" class="px-4 py-2 rounded-md border border-slate-200 bg-white text-slate-700 hover:bg-slate-50">Cancel</button>
+          <button type="submit" id="cpSaveBtn" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // initial settings copied from React component
+    const settings = {
+      name: 'John Doe',
+      email: 'john.doe@school.edu',
+      phone: '+1 (555) 123-4567',
+      subject: 'Mathematics',
+      emailNotifications: true,
+      meetingReminders: true,
+      darkMode: false,
+      language: 'en'
+    };
+
+    // populate form fields
+    function populate() {
+      const f = document.getElementById('fullName'); if(f) f.value = settings.name;
+      const e = document.getElementById('email'); if(e) e.value = settings.email;
+      const p = document.getElementById('phone'); if(p) p.value = settings.phone;
+      const s = document.getElementById('subject'); if(s) s.value = settings.subject;
+      const en = document.getElementById('emailNotifications'); if(en) en.checked = settings.emailNotifications;
+      const mr = document.getElementById('meetingReminders'); if(mr) mr.checked = settings.meetingReminders;
+      const dm = document.getElementById('darkMode'); if(dm) dm.checked = settings.darkMode;
+      const lang = document.getElementById('language'); if(lang) lang.value = settings.language;
+    }
+
+    function readForm() {
+      const f = document.getElementById('fullName'); if(f) settings.name = f.value;
+      const e = document.getElementById('email'); if(e) settings.email = e.value;
+      const p = document.getElementById('phone'); if(p) settings.phone = p.value;
+      const s = document.getElementById('subject'); if(s) settings.subject = s.value;
+      const en = document.getElementById('emailNotifications'); if(en) settings.emailNotifications = en.checked;
+      const mr = document.getElementById('meetingReminders'); if(mr) settings.meetingReminders = mr.checked;
+      const dm = document.getElementById('darkMode'); if(dm) settings.darkMode = dm.checked;
+      const lang = document.getElementById('language'); if(lang) settings.language = lang.value;
+    }
+
+    document.getElementById('saveBtn').addEventListener('click', () => {
+      readForm();
+      alert('Settings saved successfully!');
+    });
+
+    // Change Password modal wiring
+    (function changePasswordModal(){
+      const trigger = document.getElementById('changePassword');
+      const modal = document.getElementById('changePasswordModal');
+      const overlay = document.getElementById('changePasswordOverlay');
+      const closeBtn = document.getElementById('closeChangePassword');
+      const cancelBtn = document.getElementById('cpCancelBtn');
+      const form = document.getElementById('changePasswordForm');
+
+      function openModal(){ if(modal){ modal.classList.remove('hidden'); modal.classList.add('flex'); setTimeout(()=>{ const np = document.getElementById('newPassword'); if(np) np.focus(); },120); } }
+      function closeModal(){ if(modal){ modal.classList.add('hidden'); modal.classList.remove('flex'); form.reset(); } }
+
+      if(trigger) trigger.addEventListener('click', (e)=>{ e.preventDefault(); openModal(); });
+      if(overlay) overlay.addEventListener('click', closeModal);
+      if(closeBtn) closeBtn.addEventListener('click', closeModal);
+      if(cancelBtn) cancelBtn.addEventListener('click', closeModal);
+
+      // ESC to close
+      window.addEventListener('keydown', (ev)=>{ if(ev.key === 'Escape' && modal && !modal.classList.contains('hidden')) closeModal(); });
+
+      if(form) form.addEventListener('submit', (ev)=>{
+        ev.preventDefault();
+        const current = document.getElementById('currentPassword').value;
+        const np = document.getElementById('newPassword').value;
+        const cp = document.getElementById('confirmPassword').value;
+        if(!np || np.length < 8){ alert('New password must be at least 8 characters.'); return; }
+        if(np !== cp){ alert('Passwords do not match.'); return; }
+        // In a real app we'd call an API here. For static demo we just show success and close.
+        closeModal();
+        alert('Password changed successfully (demo).');
+      });
+    })();
+
+    // sidebar wiring (mobile toggle + active link)
+    (function(){
+      const btn = document.getElementById('mobile-menu-btn');
+      const overlay = document.getElementById('mobile-overlay');
+      const aside = document.getElementById('app-sidebar');
+      const mobileIcon = document.getElementById('mobile-icon');
+      let isOpen = false;
+      function setOpen(open){ isOpen = open; if(isOpen){ aside.classList.remove('-translate-x-full'); overlay.classList.remove('hidden'); if(mobileIcon) mobileIcon.innerHTML='\u2715'; } else { aside.classList.add('-translate-x-full'); overlay.classList.add('hidden'); if(mobileIcon) mobileIcon.innerHTML='\u2630'; } }
+      if(btn) btn.addEventListener('click', ()=> setOpen(!isOpen));
+      if(overlay) overlay.addEventListener('click', ()=> setOpen(false));
+      const nav = document.getElementById('sidebar-nav');
+      function updateActive(){ if(!nav) return; const currentFile = (location.pathname.split('/').pop() || '').toLowerCase(); nav.querySelectorAll('[data-path]').forEach(a=>{ a.classList.remove('bg-blue-50','text-blue-700','text-slate-600'); a.removeAttribute('aria-current'); const path = (a.getAttribute('data-path') || a.getAttribute('href') || '').toLowerCase(); if(path === currentFile){ a.classList.add('bg-blue-50','text-blue-700'); a.setAttribute('aria-current','page'); } else { a.classList.add('text-slate-600'); } }); }
+      if(nav){ nav.querySelectorAll('[data-path]').forEach(a=> a.addEventListener('click', ()=>{ if(window.innerWidth<1024) setOpen(false); setTimeout(updateActive,100); })); }
+      updateActive();
+    })();
+
+    // populate initial values
+    populate();
+  </script>
+</body>
+</html>
