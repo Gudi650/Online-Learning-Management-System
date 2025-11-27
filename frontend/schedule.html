@@ -10,45 +10,45 @@
     .icon svg { display:block }
   </style>
 </head>
-<body class="bg-slate-50 min-h-screen text-slate-800">
-  <!-- Mobile Menu Button -->
-  <button id="mobile-menu-btn" class="lg:hidden fixed top-4 left-4 z-60 p-2 bg-white rounded-lg shadow-md">
-    <span id="mobile-icon">&#9776;</span>
-  </button>
+<body class="bg-blue-50 min-h-screen text-slate-800">
   <div id="mobile-overlay" class="hidden lg:hidden fixed inset-0 bg-black bg-opacity-50 z-30"></div>
 
   <!-- Sidebar -->
   <aside id="app-sidebar" class="fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-slate-200 transform transition-transform duration-300 ease-in-out -translate-x-full lg:translate-x-0">
     <div class="flex flex-col h-full">
+      <!-- Header -->
       <div class="py-3 px-6 border-b border-slate-200">
         <h2 class="text-xl font-bold text-blue-600">EduManage</h2>
         <p class="text-sm text-slate-500 mt-0.5">Teacher Portal</p>
       </div>
+      
+      <!-- Navigation -->
       <nav id="sidebar-nav" class="flex-1 p-4 space-y-1">
   <a href="dashboard.html" data-path="dashboard.html" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 text-slate-700 hover:bg-slate-50">
           <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="8" rx="1" ry="1"/><rect x="14" y="3" width="7" height="5" rx="1" ry="1"/><rect x="14" y="12" width="7" height="9" rx="1" ry="1"/><rect x="3" y="12" width="7" height="9" rx="1" ry="1"/></svg></span>
           <span class="font-medium">Dashboard</span>
         </a>
-  <a href="schedule.html" data-path="schedule.html" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 text-slate-700 hover:bg-slate-50">
+        <a href="schedule.html" data-path="schedule.html" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 text-slate-700 hover:bg-slate-50">
           <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
           <span class="font-medium">Schedule</span>
         </a>
-  <a href="students.html" data-path="students.html" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 text-slate-700 hover:bg-slate-50">
+        <a href="students.html" data-path="students.html" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 text-slate-700 hover:bg-slate-50">
           <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
           <span class="font-medium">Students</span>
         </a>
   <a href="courses.html" data-path="courses.html" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 text-slate-700 hover:bg-slate-50">
-          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v12a0 0 0 0 1 0 0H2z"/><path d="M22 7a4 4 0 0 0-4-4"/></svg></span>
+          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V6a2 2 0 0 0-2-2H6.5A2.5 2.5 0 0 0 4 6.5V19.5z"/><path d="M20 4v16"/></svg></span>
           <span class="font-medium">Courses</span>
         </a>
   <a href="settings.html" data-path="settings.html" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 text-slate-700 hover:bg-slate-50">
-          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33"/></svg></span>
+          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09c.15.7.66 1.25 1.36 1.36h.09a1.65 1.65 0 0 0 1.51 1 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.7.15 1.25.66 1.36 1.36V10a2 2 0 0 1 0 4h-.09c-.7.15-1.25.66-1.36 1.36z"/></svg></span>
           <span class="font-medium">Settings</span>
         </a>
       </nav>
 
+      <!-- User Profile (logout button at bottom) -->
       <div class="p-4 border-t border-slate-200 mt-auto">
-        <button id="logout-btn" class="w-full flex items-center space-x-3 px-4 py-2 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors">
+        <button id="logout-btn" class="w-full flex items-center space-x-3 px-4 py-2 text-slate-600 hover:bg-red-100 rounded-lg transition-colors border border-slate-200 bg-white">
           <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><polyline points="21 12 9 12"/></svg></span>
           <span>Logout</span>
         </button>
@@ -57,27 +57,55 @@
   </aside>
 
   <!-- Main content -->
-  <div class="p-4 md:p-6 max-w-7xl mx-auto lg:ml-64">
+  <div class="pt-4 md:pt-6 px-4 md:px-6 max-w-7xl mx-auto lg:ml-64">
     <div class="mb-8">
-      <h1 class="text-3xl font-bold text-slate-900 mb-2">Schedule</h1>
-      <p class="text-slate-600">View and manage your meeting schedule</p>
+      <div class="bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-slate-100 overflow-x-hidden relative">
+        <div class="flex items-center justify-between gap-6 flex-wrap">
+          <div class="flex items-center gap-4 min-w-0">
+            <button id="mobile-menu-btn" class="lg:hidden inline-flex items-center p-2 bg-white rounded-lg shadow-md mr-2"> <span id="mobile-icon">☰</span></button>
+            <div id="admin-avatar" class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-blue-700 font-bold text-lg ring-1 ring-slate-100 shadow-sm border border-slate-200">JD</div>
+            <div>
+              <h1 class="text-2xl font-extrabold text-slate-900 leading-tight">Schedule</h1>
+              <p class="text-sm text-slate-500 mt-1">View and manage your meetings — schedule quickly and see upcoming events.</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="hidden sm:flex items-center gap-3">
+              <div class="bg-white rounded-lg shadow border border-slate-100 text-center min-w-[110px] h-12 flex flex-col justify-center px-3">
+                <div class="text-xs text-slate-600">This Month</div>
+                <div id="header-month-meetings" class="text-lg font-semibold text-slate-900">—</div>
+              </div>
+              <div class="bg-white rounded-lg shadow border border-slate-100 text-center min-w-[110px] h-12 flex flex-col justify-center px-3">
+                <div class="text-xs text-slate-600">Upcoming</div>
+                <div id="header-upcoming" class="text-lg font-semibold text-blue-600">—</div>
+              </div>
+            </div>
+
+            <button id="schedule-notif" class="relative inline-flex items-center p-2 rounded-md hover:bg-slate-50 bg-white border border-slate-100">
+              <span class="icon text-slate-700"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0 1 18 14.158V11a6 6 0 1 0-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></span>
+              <span id="schedule-notif-badge" class="absolute -top-1 -right-1 bg-rose-500 text-white text-xs rounded-full px-1.5 py-0.5">1</span>
+            </button>
+
+            <button id="header-quick-schedule" class="ml-2 inline-flex items-center bg-white border border-slate-200 hover:bg-slate-50 text-slate-800 font-medium px-4 py-2 rounded-md transition-colors">
+              <span class="icon mr-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              <span>Quick Schedule</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6">
       <div class="flex items-center justify-between mb-6">
-        <h2 id="month-name" class="text-2xl font-bold text-slate-900">January 2024</h2>
-        <div class="flex items-center space-x-2">
-          <button id="prev-month" class="p-2 hover:bg-slate-100 rounded-lg transition-colors">
-            <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></span>
-          </button>
-          <button id="next-month" class="p-2 hover:bg-slate-100 rounded-lg transition-colors">
-            <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
-          </button>
-        </div>
+        <h2 id="month-name" class="text-2xl font-bold text-slate-900">Schedule</h2>
+        <div class="text-sm text-slate-500">Calendar will be rendered by the server.</div>
       </div>
 
-      <!-- Calendar grid -->
-      <div id="calendar-grid" class="grid grid-cols-7 gap-2"></div>
+      <!-- Calendar grid (server-rendered) -->
+      <div id="calendar-grid" class="grid grid-cols-7 gap-2">
+        <div class="col-span-7 text-center text-slate-500 py-8">Calendar is rendered on the server. Use server navigation to change months.</div>
+      </div>
     </div>
 
     <!-- Meeting Scheduler (also present on dashboard) -->
@@ -101,31 +129,31 @@
         </div>
       </div>
 
-      <form id="scheduler-form" class="space-y-5">
+  <form id="scheduler-form" action="/schedule.php" method="POST" class="space-y-5">
         <div>
           <label class="block text-sm font-semibold text-slate-700 mb-2">Meeting Title <span class="text-rose-600">*</span></label>
-          <input id="title" type="text" placeholder="e.g., Math Review Session" class="w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+          <input id="title" name="title" type="text" placeholder="e.g., Math Review Session" class="w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label class="block text-sm font-medium text-slate-700 mb-2">Date <span class="text-rose-600">*</span></label>
-            <input id="date" type="date" class="w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+            <input id="date" name="date" type="date" class="w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
           </div>
           <div>
             <label class="block text-sm font-medium text-slate-700 mb-2">Time <span class="text-rose-600">*</span></label>
-            <input id="time" type="time" class="w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+            <input id="time" name="time" type="time" class="w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
           </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label class="block text-sm font-medium text-slate-700 mb-2">Duration (minutes)</label>
-            <input id="duration" type="number" min="10" step="5" value="30" class="w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+            <input id="duration" name="duration" type="number" min="10" step="5" value="30" class="w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
           </div>
           <div>
             <label class="block text-sm font-medium text-slate-700 mb-2">Class <span class="text-rose-600">*</span></label>
-            <select id="classSelect" class="w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+            <select id="classSelect" name="class" class="w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
               <option value="">Choose a class</option>
               <option>Grade 10A</option>
               <option>Grade 10B</option>
@@ -136,7 +164,10 @@
           </div>
         </div>
 
-        <div id="student-picker-container" class="mt-1"></div>
+        <div id="student-picker-container" class="mt-1">
+          <input type="hidden" name="students" id="students" value="" />
+          <p class="text-sm text-slate-500">Student selection will be managed by the server.</p>
+        </div>
 
         <div class="flex items-center justify-between flex-col sm:flex-row gap-3">
           <div class="text-sm text-slate-500">Fields marked <span class="text-rose-600">*</span> are required</div>
@@ -150,196 +181,59 @@
 
     <div class="mt-6 bg-white rounded-xl shadow-sm border border-slate-100 p-6">
       <h3 class="text-xl font-bold text-slate-900 mb-4">Upcoming Meetings</h3>
-      <div id="upcoming-list" class="space-y-3"></div>
+      <div id="upcoming-list" class="space-y-3">Upcoming meetings will be rendered by the server.</div>
     </div>
   </div>
 
   <script>
-    // Data copied from Schedule.tsx
-    const meetings = [
-      { id: 1, title: 'Math Review Session', date: new Date(2024,0,15,10,0), duration:60, class: 'Grade 10A', students:3 },
-      { id: 2, title: 'Science Lab Discussion', date: new Date(2024,0,16,14,0), duration:45, class: 'Grade 10B', students:2 },
-      { id: 3, title: 'English Literature', date: new Date(2024,0,17,9,0), duration:90, class: 'Grade 11A', students:4 }
-    ];
-
-    let currentDate = new Date();
-    function getDaysInMonth(date){
-      const year = date.getFullYear();
-      const month = date.getMonth();
-      const firstDay = new Date(year, month, 1);
-      const lastDay = new Date(year, month+1, 0);
-      const daysInMonth = lastDay.getDate();
-      const startingDayOfWeek = firstDay.getDay();
-      return { daysInMonth, startingDayOfWeek };
-    }
-
-    function renderCalendar(){
-      const { daysInMonth, startingDayOfWeek } = getDaysInMonth(currentDate);
-      const grid = document.getElementById('calendar-grid');
-      const monthName = currentDate.toLocaleString('default',{ month: 'long', year: 'numeric'});
-      document.getElementById('month-name').textContent = monthName;
-      grid.innerHTML = '';
-      // day headers
-      ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].forEach(d => {
-        const el = document.createElement('div');
-        el.className = 'text-center font-semibold text-slate-600 py-2';
-        el.textContent = d;
-        grid.appendChild(el);
-      });
-      // empty slots
-      for(let i=0;i<startingDayOfWeek;i++){
-        const el = document.createElement('div'); el.className = 'aspect-square'; grid.appendChild(el);
-      }
-      for(let day=1; day<=daysInMonth; day++){
-        const cell = document.createElement('div');
-        const today = new Date();
-        const isToday = today.getDate()===day && today.getMonth()===currentDate.getMonth() && today.getFullYear()===currentDate.getFullYear();
-        cell.className = `aspect-square border border-slate-200 rounded-lg p-2 ${isToday ? 'bg-blue-50 border-blue-300' : 'hover:bg-slate-50'} transition-colors`;
-        const title = document.createElement('div'); title.className = `text-sm font-medium mb-1 ${isToday ? 'text-blue-700' : 'text-slate-700'}`; title.textContent = String(day);
-        cell.appendChild(title);
-        const slot = document.createElement('div'); slot.className = 'space-y-1';
-        const dayMeetings = meetings.filter(m => { const md = new Date(m.date); return md.getDate()===day && md.getMonth()===currentDate.getMonth() && md.getFullYear()===currentDate.getFullYear(); });
-        dayMeetings.slice(0,2).forEach(m => { const d = document.createElement('div'); d.className='text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded truncate'; d.textContent = m.title; slot.appendChild(d); });
-        if(dayMeetings.length>2){ const more = document.createElement('div'); more.className='text-xs text-slate-500'; more.textContent = `+${dayMeetings.length-2} more`; slot.appendChild(more); }
-        cell.appendChild(slot);
-        grid.appendChild(cell);
-      }
-    }
-
-    function renderUpcoming(){
-      const list = document.getElementById('upcoming-list');
-      list.innerHTML = '';
-      meetings.forEach(m => {
-        const wrapper = document.createElement('div'); wrapper.className='flex items-center justify-between p-4 border border-slate-200 rounded-lg hover:border-blue-300 transition-colors';
-        const left = document.createElement('div'); left.className='flex items-center space-x-4';
-        const iconWrap = document.createElement('div'); iconWrap.className='bg-blue-100 p-3 rounded-lg';
-        iconWrap.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>';
-        const info = document.createElement('div');
-        const h4 = document.createElement('h4'); h4.className='font-semibold text-slate-900'; h4.textContent = m.title;
-        const p = document.createElement('p'); p.className='text-sm text-slate-600'; p.textContent = (new Date(m.date)).toLocaleDateString() + ' at ' + (new Date(m.date)).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        info.appendChild(h4); info.appendChild(p);
-        left.appendChild(iconWrap); left.appendChild(info);
-        const right = document.createElement('div'); right.className='text-right';
-        const c = document.createElement('p'); c.className='text-sm font-medium text-slate-700'; c.textContent=m.class;
-        const d = document.createElement('p'); d.className='text-xs text-slate-500'; d.textContent=`${m.students} students • ${m.duration} min`;
-        right.appendChild(c); right.appendChild(d);
-        wrapper.appendChild(left); wrapper.appendChild(right);
-        list.appendChild(wrapper);
-      });
-    }
-
-    // Classes & students used by the scheduler
-    const studentsByClass = {
-      'Grade 10A': ['Alice Johnson', 'Bob Smith', 'Carol White', 'David Brown'],
-      'Grade 10B': ['Emma Davis', 'Frank Miller', 'Grace Lee', 'Henry Wilson'],
-      'Grade 11A': ['Ivy Chen', 'Jack Taylor', 'Kate Anderson', 'Leo Martinez'],
-      'Grade 11B': ['Maya Patel', 'Noah Garcia', 'Olivia Rodriguez', 'Peter Kim'],
-      'Grade 12A': ['Quinn Thompson', 'Ryan Lopez', 'Sarah Clark', 'Tom Harris']
-    };
-
-    // Small icon + helpers (used by the student picker)
-    const Icon = {
-      Users: () => `<span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>`
-    };
-
-    const escapeHtml = str => String(str).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
-
-    function renderStudentPicker(selectedClass, selectedStudents = []){
-      const container = document.getElementById('student-picker-container');
-      if(!container) return () => [];
-      if(!selectedClass){ container.innerHTML = ''; return () => []; }
-      const available = studentsByClass[selectedClass] || [];
-      container.innerHTML = `
-        <label class="block text-sm font-medium text-slate-700 mb-2">${Icon.Users()} Select Students (<span id="selected-count">${selectedStudents.length}</span> selected)</label>
-        <div class="border border-slate-200 rounded-lg p-3 max-h-48 overflow-y-auto">
-          <div class="space-y-2">
-            ${available.map(student => `
-              <label class="flex items-center space-x-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition">
-                <input type="checkbox" data-student="${escapeHtml(student)}" class="student-checkbox w-4 h-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500" ${selectedStudents.includes(student) ? 'checked' : ''} />
-                <span class="text-slate-700">${escapeHtml(student)}</span>
-              </label>
-            `).join('')}
-          </div>
-        </div>
-      `;
-
-      container.querySelectorAll('.student-checkbox').forEach(cb => cb.addEventListener('change', () => {
-        const student = cb.getAttribute('data-student');
-        const idx = selectedStudents.indexOf(student);
-        if(cb.checked && idx === -1) selectedStudents.push(student);
-        if(!cb.checked && idx > -1) selectedStudents.splice(idx, 1);
-        const span = document.getElementById('selected-count'); if(span) span.textContent = String(selectedStudents.length);
-      }));
-
-      return () => Array.from(container.querySelectorAll('.student-checkbox')).filter(c => c.checked).map(c => c.getAttribute('data-student'));
-    }
-
-    // Wire up scheduler on this page
-    (function schedulerWireup(){
-      const form = document.getElementById('scheduler-form');
-      const classSelect = document.getElementById('classSelect');
-      let getSelectedStudents = () => [];
-      if(classSelect) classSelect.addEventListener('change', () => { getSelectedStudents = renderStudentPicker(classSelect.value, []); });
-      // Cancel button resets the form and clears the student picker
-      const cancelBtn = document.getElementById('scheduler-cancel');
-      if(cancelBtn) cancelBtn.addEventListener('click', () => {
-        if(form) form.reset();
-        const studentPickerContainer = document.getElementById('student-picker-container'); if(studentPickerContainer) studentPickerContainer.innerHTML = '';
-      });
-      if(form) form.addEventListener('submit', e => {
-        e.preventDefault();
-        const title = document.getElementById('title').value.trim();
-        const dateVal = document.getElementById('date').value;
-        const timeVal = document.getElementById('time').value;
-        const duration = parseInt(document.getElementById('duration').value, 10) || 30;
-        const cls = classSelect.value;
-        const selectedStudents = getSelectedStudents();
-        if(!title || !dateVal || !timeVal || !cls || selectedStudents.length === 0){ alert('Please fill in all fields and select at least one student'); return; }
-        const [year, month, day] = dateVal.split('-').map(Number);
-        const [hours, minutes] = timeVal.split(':').map(Number);
-        const meetingDate = new Date(year, month - 1, day, hours, minutes);
-        meetings.push({ id: meetings.length + 1, title, date: meetingDate, students: selectedStudents.length, class: cls, duration });
-        form.reset(); const studentPickerContainer = document.getElementById('student-picker-container'); if(studentPickerContainer) studentPickerContainer.innerHTML = '';
-        renderCalendar(); renderUpcoming();
-      });
-    })();
-
-    document.getElementById('prev-month').addEventListener('click', ()=>{ currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth()-1); renderCalendar(); });
-    document.getElementById('next-month').addEventListener('click', ()=>{ currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth()+1); renderCalendar(); });
-
-    // sidebar wiring (mobile toggle + active link)
-    (function(){
+    // Minimal JS: sidebar and admin name population
+    (function setupSidebar(){
       const btn = document.getElementById('mobile-menu-btn');
       const overlay = document.getElementById('mobile-overlay');
       const aside = document.getElementById('app-sidebar');
       const mobileIcon = document.getElementById('mobile-icon');
       let isOpen = false;
-      function setOpen(open){ isOpen = open; if(isOpen){ aside.classList.remove('-translate-x-full'); overlay.classList.remove('hidden'); mobileIcon.innerHTML='\u2715'; } else { aside.classList.add('-translate-x-full'); overlay.classList.add('hidden'); mobileIcon.innerHTML='\u2630'; } }
+      function setOpen(open){ isOpen = open; if(isOpen){ aside.classList.remove('-translate-x-full'); overlay.classList.remove('hidden'); if(mobileIcon) mobileIcon.textContent='✕'; } else { aside.classList.add('-translate-x-full'); overlay.classList.add('hidden'); if(mobileIcon) mobileIcon.textContent='☰'; } }
       if(btn) btn.addEventListener('click', ()=> setOpen(!isOpen));
       if(overlay) overlay.addEventListener('click', ()=> setOpen(false));
       const nav = document.getElementById('sidebar-nav');
-      function updateActive(){
-        if(!nav) return;
-        const currentFile = (location.pathname.split('/').pop() || '').toLowerCase();
-        nav.querySelectorAll('[data-path]').forEach(a=>{
-          a.classList.remove('bg-blue-50','text-blue-700','text-slate-600');
-          a.removeAttribute('aria-current');
-          const path = (a.getAttribute('data-path') || a.getAttribute('href') || '').toLowerCase();
-          if(path === currentFile){
-            a.classList.add('bg-blue-50','text-blue-700');
-            a.setAttribute('aria-current','page');
-          } else {
-            a.classList.add('text-slate-600');
-          }
-        });
-      }
-      if(nav){
-        nav.querySelectorAll('[data-path]').forEach(a=> a.addEventListener('click', ()=>{ if(window.innerWidth<1024) setOpen(false); setTimeout(updateActive,100); }));
-      }
+      function updateActive(){ if(!nav) return; const currentFile = (location.pathname.split('/').pop() || '').toLowerCase(); nav.querySelectorAll('[data-path]').forEach(a=>{ a.classList.remove('bg-blue-50','text-blue-700','text-slate-600'); a.removeAttribute('aria-current'); const path = (a.getAttribute('data-path') || a.getAttribute('href') || '').toLowerCase(); if(path === currentFile){ a.classList.add('bg-blue-50','text-blue-700'); a.setAttribute('aria-current','page'); } else { a.classList.add('text-slate-600'); } }); }
+      if(nav){ nav.querySelectorAll('[data-path]').forEach(a=> a.addEventListener('click', ()=>{ if(window.innerWidth<1024) setOpen(false); setTimeout(updateActive,100); })); }
       updateActive();
     })();
 
-    renderCalendar(); renderUpcoming();
+    (function populateAdmin(){
+      const ADMIN_NAME = 'John Doe';
+      const el = document.getElementById('admin-name');
+      const av = document.getElementById('admin-avatar');
+      if(el) el.textContent = ADMIN_NAME;
+      if(av){ const parts = ADMIN_NAME.split(' ').filter(Boolean); const initials = parts.length >= 2 ? parts[0][0] + parts[1][0] : ADMIN_NAME.slice(0,2).toUpperCase(); av.textContent = initials.toUpperCase(); }
+    })();
+
+    // header stats wiring for schedule
+    (function setupScheduleHeader(){
+      const monthEl = document.getElementById('header-month-meetings');
+      const upEl = document.getElementById('header-upcoming');
+      const upcomingList = document.getElementById('upcoming-list');
+      // try to infer counts from DOM where possible
+      const upcomingCount = upcomingList ? Math.max(0, upcomingList.children.length) : 0;
+      if(upEl) upEl.textContent = upcomingCount || '—';
+      // month meetings: best-effort: count calendar day cells containing events (server rendered) - fallback to dash
+      const calendarGrid = document.getElementById('calendar-grid');
+      let monthCount = '—';
+      if(calendarGrid){
+        try{
+          const eventCells = calendarGrid.querySelectorAll('[data-event]');
+          monthCount = eventCells ? eventCells.length : '—';
+        }catch(e){ monthCount = '—'; }
+      }
+      if(monthEl) monthEl.textContent = monthCount;
+
+      // wire quick schedule to scroll to meeting scheduler area and focus title
+      const quickBtn = document.getElementById('header-quick-schedule');
+      const scheduler = document.getElementById('meeting-scheduler');
+      if(quickBtn && scheduler){ quickBtn.addEventListener('click', ()=>{ scheduler.scrollIntoView({behavior:'smooth', block:'center'}); const title = document.getElementById('title'); if(title) setTimeout(()=> title.focus(),300); }); }
+    })();
   </script>
 </body>
 </html>

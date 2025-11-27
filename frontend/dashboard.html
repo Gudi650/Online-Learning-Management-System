@@ -10,14 +10,16 @@
     .icon svg { display:block }
   </style>
 </head>
-<body class="bg-slate-50 min-h-screen text-slate-800">
-  <!-- Mobile Menu Button -->
-  <button id="mobile-menu-btn" class="lg:hidden fixed top-4 left-4 z-60 p-2 bg-white rounded-lg shadow-md">
-    <span id="mobile-icon">&#9776;</span>
-  </button>
-  
+<body class="bg-blue-50 min-h-screen text-slate-800">
   <!-- Mobile Overlay -->
   <div id="mobile-overlay" class="hidden lg:hidden fixed inset-0 bg-black bg-opacity-50 z-30"></div>
+  <!-- Toast container -->
+  <div id="toasts" class="fixed bottom-6 right-6 space-y-2 z-70 pointer-events-none"></div>
+  <style>
+    /* toast fade */
+    #toasts > div { transition: transform .3s ease, opacity .3s ease; transform-origin: right; }
+    #toasts > div.opacity-0 { opacity: 0; transform: translateX(12px); }
+  </style>
   
   <!-- Sidebar -->
   <aside id="app-sidebar" class="fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-slate-200 transform transition-transform duration-300 ease-in-out -translate-x-full lg:translate-x-0">
@@ -34,16 +36,16 @@
           <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="8" rx="1" ry="1"/><rect x="14" y="3" width="7" height="5" rx="1" ry="1"/><rect x="14" y="12" width="7" height="9" rx="1" ry="1"/><rect x="3" y="12" width="7" height="9" rx="1" ry="1"/></svg></span>
           <span class="font-medium">Dashboard</span>
         </a>
-  <a href="schedule.html" data-path="schedule.html" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 text-slate-700 hover:bg-slate-50">
+        <a href="schedule.html" data-path="schedule.html" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 text-slate-700 hover:bg-slate-50">
           <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
           <span class="font-medium">Schedule</span>
         </a>
-  <a href="students.html" data-path="students.html" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 text-slate-700 hover:bg-slate-50">
+        <a href="students.html" data-path="students.html" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 text-slate-700 hover:bg-slate-50">
           <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
           <span class="font-medium">Students</span>
         </a>
   <a href="courses.html" data-path="courses.html" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 text-slate-700 hover:bg-slate-50">
-          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v12a0 0 0 0 1 0 0H2z"/><path d="M22 7a4 4 0 0 0-4-4"/></svg></span>
+          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V6a2 2 0 0 0-2-2H6.5A2.5 2.5 0 0 0 4 6.5V19.5z"/><path d="M20 4v16"/></svg></span>
           <span class="font-medium">Courses</span>
         </a>
   <a href="settings.html" data-path="settings.html" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 text-slate-700 hover:bg-slate-50">
@@ -54,7 +56,7 @@
       
       <!-- User Profile (logout button at bottom) -->
       <div class="p-4 border-t border-slate-200 mt-auto">
-        <button id="logout-btn" class="w-full flex items-center space-x-3 px-4 py-2 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors">
+        <button id="logout-btn" class="w-full flex items-center space-x-3 px-4 py-2 text-slate-600 hover:bg-red-100 rounded-lg transition-colors border border-slate-200 bg-white">
           <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><polyline points="21 12 9 12"/></svg></span>
           <span>Logout</span>
         </button>
@@ -66,30 +68,44 @@
   <div class="p-4 md:p-6 max-w-7xl mx-auto lg:ml-64">
     <!-- Page Header (styled, responsive welcome section) -->
     <div class="mb-8">
-  <div class="bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-slate-100">
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <div class="flex items-center gap-4">
-            <div id="admin-avatar" class="w-14 h-14 bg-gradient-to-br from-blue-50 to-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold text-lg ring-2 ring-white shadow-sm">AD</div>
+  <div class="bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-slate-100 overflow-x-hidden relative">
+  <div class="flex items-center justify-between gap-6 flex-wrap">
+            <div class="flex items-center gap-6 min-w-0">
+            <button id="mobile-menu-btn" class="lg:hidden inline-flex items-center p-2 bg-white rounded-lg shadow-md mr-2">
+              <span id="mobile-icon">☰</span>
+            </button>
+            <div id="admin-avatar" class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-blue-700 font-bold text-lg ring-1 ring-slate-100 shadow-sm border border-slate-200">AD</div>
             <div>
               <h1 class="text-lg sm:text-2xl font-extrabold text-slate-900 leading-tight">Welcome back, <span id="admin-name">Administrator</span></h1>
               <p class="text-sm text-slate-500 mt-1">Here's what's happening today — quick overview of your classroom.</p>
             </div>
           </div>
 
-          <div class="flex items-stretch gap-3">
+          <!-- spacer to push right-side controls outward on larger viewports -->
+          <div class="hidden sm:block sm:flex-1" aria-hidden="true"></div>
+
+            <div class="flex items-center gap-6 flex-wrap min-w-0 ml-20 sm:ml-0 mt-3 sm:mt-0">
+            <div class="relative hidden sm:block">
+              <input id="globalSearch" type="search" placeholder="Search meetings, students, courses..." class="w-72 px-4 py-2 rounded-md border border-slate-200 bg-white focus:ring-2 focus:ring-blue-500 outline-none" />
+              <button id="searchClear" class="absolute right-1 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 hidden">✕</button>
+            </div>
+            <button id="notificationsBtn" class="relative inline-flex items-center justify-center p-2 rounded-md hover:bg-slate-50 bg-white border border-slate-100 sm:absolute sm:top-4 sm:right-4">
+              <span class="icon text-slate-700"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0 1 18 14.158V11a6 6 0 1 0-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></span>
+              <span id="notifBadge" class="absolute -top-1 -right-1 bg-rose-500 text-white text-xs rounded-full px-1.5 py-0.5">3</span>
+            </button>
             <div class="flex gap-2 items-stretch">
               <div class="hidden sm:flex items-stretch gap-2">
                 <div class="bg-white rounded-lg shadow border border-slate-100 text-center min-w-[88px] h-12 flex flex-col justify-center px-3">
-                  <div class="text-xs text-slate-500">Meetings</div>
+                  <div class="text-xs text-slate-600">Meetings</div>
                   <div id="header-upcoming" class="text-lg font-semibold text-slate-900">0</div>
                 </div>
                 <div class="bg-white rounded-lg shadow border border-slate-100 text-center min-w-[88px] h-12 flex flex-col justify-center px-3">
-                  <div class="text-xs text-slate-500">Students</div>
+                  <div class="text-xs text-slate-600">Students</div>
                   <div id="header-students" class="text-lg font-semibold text-slate-900">0</div>
                 </div>
               </div>
             </div>
-            <button id="header-new-meeting" class="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white min-w-[110px] h-12 rounded-md border border-blue-700 shadow-md hover:shadow-lg px-3 py-2 leading-none whitespace-nowrap">
+            <button id="header-new-meeting" class="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white min-w-[110px] h-12 rounded-md border border-blue-700 shadow-md hover:shadow-lg px-3 py-2 leading-none max-w-full">
               <span class="inline-flex items-center justify-center w-8 h-8 bg-white/20 rounded-full flex-shrink-0">
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14"/></svg>
               </span>
@@ -100,8 +116,8 @@
       </div>
     </div>
 
-    <!-- Stats Grid -->
-    <div id="dashboard-stats" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+  <!-- Stats Grid -->
+  <div id="dashboard-stats" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
       <div class="bg-white rounded-xl p-4 shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
         <div class="flex items-start justify-between mb-3">
           <div class="bg-blue-500 p-2 rounded-lg text-white">
@@ -147,10 +163,37 @@
       </div>
     </div>
 
+    <!-- Performance / trend sparkline -->
+    <div class="mb-6">
+      <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-4 flex items-center justify-between">
+        <div>
+          <p class="text-sm text-slate-600 mb-1">Weekly Engagement</p>
+          <p class="text-lg font-bold text-slate-900">Active students this week</p>
+        </div>
+        <div class="w-48 sm:w-64">
+          <svg id="sparkline" class="w-full h-12" viewBox="0 0 200 48" preserveAspectRatio="none"></svg>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Top Students -->
+    <div class="mb-6">
+      <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-4">
+        <div class="flex items-center justify-between mb-3">
+          <div>
+            <p class="text-sm text-slate-600">Top Students</p>
+            <p class="text-lg font-bold text-slate-900">Most active this month</p>
+          </div>
+          <div class="text-sm text-slate-500">Based on meeting participation</div>
+        </div>
+        <ul id="topStudents" class="space-y-2 text-sm text-slate-700"></ul>
+      </div>
+    </div>
+
     <!-- Main Grid -->
-    <div class="grid lg:grid-cols-3 gap-6">
+    <div class="grid xl:grid-cols-3 gap-6">
       <!-- Meeting Scheduler -->
-      <div class="lg:col-span-2">
+      <div class="xl:col-span-2">
         <div id="meeting-scheduler" class="bg-white rounded-xl shadow-sm border border-slate-100 p-6">
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-3">
             <div class="flex items-center gap-3">
@@ -171,31 +214,31 @@
             </div>
           </div>
 
-          <form id="scheduler-form" class="space-y-5">
+          <form id="scheduler-form" action="/schedule.php" method="POST" class="space-y-5">
             <div>
               <label class="block text-sm font-semibold text-slate-700 mb-2">Meeting Title <span class="text-rose-600">*</span></label>
-              <input id="title" type="text" placeholder="e.g., Math Review Session" class="w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+              <input id="title" name="title" type="text" placeholder="e.g., Math Review Session" class="w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-medium text-slate-700 mb-2">Date <span class="text-rose-600">*</span></label>
-                <input id="date" type="date" class="w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+                <input id="date" name="date" type="date" class="w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
               </div>
               <div>
                 <label class="block text-sm font-medium text-slate-700 mb-2">Time <span class="text-rose-600">*</span></label>
-                <input id="time" type="time" class="w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+                <input id="time" name="time" type="time" class="w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
               </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-medium text-slate-700 mb-2">Duration (minutes)</label>
-                <input id="duration" type="number" min="10" step="5" value="30" class="w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
+                <input id="duration" name="duration" type="number" min="10" step="5" value="30" class="w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
               </div>
               <div>
                 <label class="block text-sm font-medium text-slate-700 mb-2">Class <span class="text-rose-600">*</span></label>
-                <select id="classSelect" class="w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                <select id="classSelect" name="class" class="w-full px-4 py-2 border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
                   <option value="">Choose a class</option>
                   <option value="Grade 10A">Grade 10A</option>
                   <option value="Grade 10B">Grade 10B</option>
@@ -206,7 +249,10 @@
               </div>
             </div>
 
-            <div id="student-picker-container" class="mt-1"></div>
+            <div id="student-picker-container" class="mt-1">
+              <input type="hidden" name="students" id="students" value="" />
+              <p class="text-sm text-slate-500">Student selection will be handled on the server. The server will provide student lists and persist meetings.</p>
+            </div>
 
             <div class="flex items-center justify-between flex-col sm:flex-row gap-3">
               <div class="text-sm text-slate-500">Fields marked <span class="text-rose-600">*</span> are required</div>
@@ -219,66 +265,40 @@
         </div>
       </div>
       
-      <!-- Upcoming Meetings -->
-      <div class="lg:col-span-1">
-        <div id="upcoming-meetings" class="bg-white rounded-xl shadow-sm border border-slate-100 p-6">
+  <!-- Upcoming Meetings -->
+  <div class="xl:col-span-1">
+        <div id="upcoming-meetings" class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 space-y-4">
           <div class="flex items-center justify-between mb-6">
             <h2 class="text-xl font-bold text-slate-900">Upcoming Meetings</h2>
             <span id="upcoming-count" class="bg-blue-100 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">2 scheduled</span>
           </div>
           
-          <div id="upcoming-list" class="space-y-4 max-h-[600px] overflow-y-auto"></div>
+            <div id="upcoming-list" class="space-y-4 max-h-56 md:max-h-[250px] overflow-y-auto">
+              <div class="text-center py-8 text-slate-500">Upcoming meetings will be rendered by the server.</div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="bg-slate-50 border border-slate-100 rounded-lg p-4">
+              <h3 class="text-sm font-semibold text-slate-900 mb-3">Quick Actions</h3>
+              <div class="flex flex-col space-y-2">
+                <button id="exportCsv" class="w-full text-left bg-white border border-slate-200 rounded-md px-3 py-2 hover:bg-slate-50">Export meetings as CSV</button>
+                <button id="importBtn" class="w-full text-left bg-white border border-slate-200 rounded-md px-3 py-2 hover:bg-slate-50">Import meetings</button>
+                <button id="addStudentQuick" class="w-full text-left bg-white border border-slate-200 rounded-md px-3 py-2 hover:bg-slate-50">Add Student</button>
+              </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="bg-white rounded-lg border border-slate-100 p-4">
+              <h3 class="text-sm font-semibold text-slate-900 mb-3">Recent Activity</h3>
+              <ul id="activityList" class="space-y-2 text-sm text-slate-600 max-h-36 overflow-y-auto"></ul>
+            </div>
         </div>
       </div>
     </div>
   </div>
 
   <script>
-    // Data
-    const meetings = [
-      {
-        id: 1,
-        title: 'Math Review Session',
-        date: new Date(2025, 0, 15, 10, 0),
-        students: ['Alice Johnson', 'Bob Smith', 'Carol White'],
-        class: 'Grade 10A',
-        duration: 60
-      },
-      {
-        id: 2,
-        title: 'Science Lab Discussion',
-        date: new Date(2025, 0, 16, 14, 0),
-        students: ['David Brown', 'Emma Davis'],
-        class: 'Grade 10B',
-        duration: 45
-      }
-    ];
-
-    const studentsByClass = {
-      'Grade 10A': ['Alice Johnson', 'Bob Smith', 'Carol White', 'David Brown'],
-      'Grade 10B': ['Emma Davis', 'Frank Miller', 'Grace Lee', 'Henry Wilson'],
-      'Grade 11A': ['Ivy Chen', 'Jack Taylor', 'Kate Anderson', 'Leo Martinez'],
-      'Grade 11B': ['Maya Patel', 'Noah Garcia', 'Olivia Rodriguez', 'Peter Kim'],
-      'Grade 12A': ['Quinn Thompson', 'Ryan Lopez', 'Sarah Clark', 'Tom Harris']
-    };
-
-    // Admin name (displayed in the welcome header)
-    const ADMIN_NAME = 'John Doe';
-
-    // Formatting helpers
-    const fmtDate = date => new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(date);
-    const fmtTime = date => new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', hour12: true }).format(date);
-    const escapeHtml = str => String(str).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
-
-    // Icon helpers
-    const Icon = {
-      Calendar: () => `<span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>`,
-      Clock: () => `<span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>`,
-      Users: () => `<span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>`,
-      Trash: () => `<span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg></span>`
-    };
-
-    // Sidebar functionality
+    // Minimal client-side JS: keep sidebar behavior, admin name population, and small search helper.
     (function setupSidebar() {
       const btn = document.getElementById('mobile-menu-btn');
       const overlay = document.getElementById('mobile-overlay');
@@ -288,33 +308,30 @@
 
       function setOpen(open) {
         isOpen = open;
-        // Only manipulate on mobile screens
         if (window.innerWidth < 1024) {
           if (isOpen) {
             aside.classList.remove('-translate-x-full');
             overlay.classList.remove('hidden');
-            if (mobileIcon) mobileIcon.innerHTML = '&#10005;';
+            if (mobileIcon) mobileIcon.textContent = '✕';
           } else {
             aside.classList.add('-translate-x-full');
             overlay.classList.add('hidden');
-            if (mobileIcon) mobileIcon.innerHTML = '&#9776;';
+            if (mobileIcon) mobileIcon.textContent = '☰';
           }
         }
       }
 
-      // Handle window resize
       window.addEventListener('resize', () => {
         if (window.innerWidth >= 1024) {
           overlay.classList.add('hidden');
           isOpen = false;
-          if (mobileIcon) mobileIcon.innerHTML = '&#9776;';
+          if (mobileIcon) mobileIcon.textContent = '☰';
         }
       });
 
       if (btn) btn.addEventListener('click', () => setOpen(!isOpen));
       if (overlay) overlay.addEventListener('click', () => setOpen(false));
 
-      // Active link highlighting (based on current filename)
       const nav = document.getElementById('sidebar-nav');
       function updateActive() {
         if (!nav) return;
@@ -332,179 +349,17 @@
         });
       }
 
-      if (nav) {
-        nav.querySelectorAll('[data-path]').forEach(a => {
-          a.addEventListener('click', () => {
-            // Close mobile menu on navigation (navigation will change the page)
-            if (window.innerWidth < 1024) setOpen(false);
-            // small timeout in case SPA-like navigation is used; update active state shortly after
-            setTimeout(updateActive, 100);
-          });
-        });
-      }
+      if (nav) nav.querySelectorAll('[data-path]').forEach(a => a.addEventListener('click', () => {
+        if (window.innerWidth < 1024) setOpen(false);
+        setTimeout(updateActive, 100);
+      }));
 
-      // run once on load
       updateActive();
     })();
 
-    // Update statistics
-    function updateStats() {
-      const totalStudents = new Set(meetings.flatMap(m => m.students)).size;
-      const upcomingCount = meetings.filter(m => m.date > new Date()).length;
-      
-      const elTotal = document.getElementById('stat-total-students');
-      const elUpcoming = document.getElementById('stat-upcoming-meetings');
-      const elUpcomingBadge = document.getElementById('upcoming-count');
-      
-      if (elTotal) elTotal.textContent = String(totalStudents);
-      if (elUpcoming) elUpcoming.textContent = String(upcomingCount);
-      if (elUpcomingBadge) elUpcomingBadge.textContent = `${upcomingCount} scheduled`;
-      const elHeaderStudents = document.getElementById('header-students');
-      const elHeaderUpcoming = document.getElementById('header-upcoming');
-      if (elHeaderStudents) elHeaderStudents.textContent = String(totalStudents);
-      if (elHeaderUpcoming) elHeaderUpcoming.textContent = String(upcomingCount);
-    }
-
-    // Student picker
-    function renderStudentPicker(selectedClass, selectedStudents = []) {
-      const container = document.getElementById('student-picker-container');
-      if (!container) return () => [];
-      
-      if (!selectedClass) {
-        container.innerHTML = '';
-        return () => [];
-      }
-
-      const available = studentsByClass[selectedClass] || [];
-      container.innerHTML = `
-        <label class="block text-sm font-medium text-slate-700 mb-2">
-          ${Icon.Users()} Select Students (<span id="selected-count">${selectedStudents.length}</span> selected)
-        </label>
-        <div class="border border-slate-200 rounded-lg p-3 max-h-48 overflow-y-auto">
-          <div class="space-y-2">
-            ${available.map(student => `
-              <label class="flex items-center space-x-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition">
-                <input type="checkbox" data-student="${escapeHtml(student)}" class="student-checkbox w-4 h-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500" ${selectedStudents.includes(student) ? 'checked' : ''} />
-                <span class="text-slate-700">${escapeHtml(student)}</span>
-              </label>
-            `).join('')}
-          </div>
-        </div>
-      `;
-
-      // Wire up checkboxes
-      container.querySelectorAll('.student-checkbox').forEach(cb => {
-        cb.addEventListener('change', () => {
-          const student = cb.getAttribute('data-student');
-          const idx = selectedStudents.indexOf(student);
-          if (cb.checked && idx === -1) selectedStudents.push(student);
-          if (!cb.checked && idx > -1) selectedStudents.splice(idx, 1);
-          const span = document.getElementById('selected-count');
-          if (span) span.textContent = String(selectedStudents.length);
-        });
-      });
-
-      return () => Array.from(container.querySelectorAll('.student-checkbox'))
-        .filter(c => c.checked)
-        .map(c => c.getAttribute('data-student'));
-    }
-
-    // Update upcoming meetings list
-    function updateUpcoming() {
-      const listEl = document.getElementById('upcoming-list');
-      if (!listEl) return;
-
-      const upcomingMeetings = meetings
-        .filter(m => m.date > new Date())
-        .sort((a, b) => a.date - b.date);
-
-      if (upcomingMeetings.length === 0) {
-        listEl.innerHTML = `
-          <div class="text-center py-8">
-            ${Icon.Calendar('mx-auto text-slate-300 mb-3')}
-            <p class="text-slate-500">No upcoming meetings</p>
-            <p class="text-sm text-slate-400 mt-1">Schedule a new meeting to get started</p>
-          </div>
-        `;
-        return;
-      }
-
-      listEl.innerHTML = upcomingMeetings.map(meeting => `
-        <div class="border border-slate-200 rounded-lg p-4 hover:border-blue-300 transition-colors group" data-id="${meeting.id}">
-          <div class="flex items-start justify-between mb-3">
-            <h3 class="font-semibold text-slate-900">${escapeHtml(meeting.title)}</h3>
-            <button class="delete-btn text-slate-400 hover:text-red-600 transition-colors opacity-0 group-hover:opacity-100" aria-label="Delete meeting">
-              ${Icon.Trash2('')}
-            </button>
-          </div>
-          <div class="space-y-2 text-sm">
-            <div class="flex items-center text-slate-600"><span class="mr-2 text-blue-600">${Icon.Calendar('inline')}</span> ${fmtDate(meeting.date)}</div>
-            <div class="flex items-center text-slate-600"><span class="mr-2 text-blue-600">${Icon.Clock('inline')}</span> ${fmtTime(meeting.date)} (${meeting.duration} min)</div>
-            <div class="flex items-center text-slate-600"><span class="mr-2 text-blue-600">${Icon.Users('inline')}</span> ${meeting.students.length} student${meeting.students.length !== 1 ? 's' : ''}</div>
-            <div class="pt-2 border-t border-slate-100"><span class="inline-block bg-slate-100 text-slate-700 text-xs px-2 py-1 rounded">${escapeHtml(meeting.class)}</span></div>
-            <div class="pt-2">
-              <details class="text-xs text-slate-500">
-                <summary class="cursor-pointer hover:text-slate-700">View students (${meeting.students.length})</summary>
-                <ul class="mt-2 space-y-1 pl-4">${meeting.students.map(s => `<li>• ${escapeHtml(s)}</li>`).join('')}</ul>
-              </details>
-            </div>
-          </div>
-        </div>
-      `).join('');
-
-      // wire delete buttons
-      listEl.querySelectorAll('.delete-btn').forEach(btn => btn.addEventListener('click', (e) => {
-        const wrapper = e.target.closest('[data-id]');
-        const id = wrapper ? Number(wrapper.getAttribute('data-id')) : null;
-        if (id != null) {
-          const idx = meetings.findIndex(m => m.id === id);
-          if (idx > -1) meetings.splice(idx, 1);
-          updateStats();
-          updateUpcoming();
-        }
-      }));
-
-    }
-
-    // Wire up scheduler form events
-    (function schedulerWireup(){
-      const form = document.getElementById('scheduler-form');
-      const classSelect = document.getElementById('classSelect');
-      let getSelectedStudents = () => [];
-      if(classSelect) classSelect.addEventListener('change', () => { getSelectedStudents = renderStudentPicker(classSelect.value, []); });
-      // Cancel button resets the form and clears the student picker
-      const cancelBtn = document.getElementById('scheduler-cancel');
-      if(cancelBtn) cancelBtn.addEventListener('click', () => {
-        if(form) form.reset();
-        const studentPickerContainer = document.getElementById('student-picker-container'); if(studentPickerContainer) studentPickerContainer.innerHTML = '';
-      });
-      if(form) form.addEventListener('submit', e => {
-        e.preventDefault();
-        const title = document.getElementById('title').value.trim();
-        const dateVal = document.getElementById('date').value;
-        const timeVal = document.getElementById('time').value;
-        const duration = parseInt(document.getElementById('duration').value, 10);
-        const cls = classSelect.value;
-        const selectedStudents = getSelectedStudents();
-        if (!title || !dateVal || !timeVal || !cls || selectedStudents.length === 0) {
-          alert('Please fill in all fields and select at least one student');
-          return;
-        }
-        const [year, month, day] = dateVal.split('-').map(Number);
-        const [hours, minutes] = timeVal.split(':').map(Number);
-        const meetingDate = new Date(year, month - 1, day, hours, minutes);
-        meetings.push({ id: meetings.length + 1, title, date: meetingDate, students: selectedStudents, class: cls, duration });
-        form.reset();
-        const studentPickerContainer = document.getElementById('student-picker-container'); if(studentPickerContainer) studentPickerContainer.innerHTML = '';
-        updateStats(); updateUpcoming();
-      });
-    })();
-
-    // Initial update
-    updateStats();
-    updateUpcoming();
-    // populate admin name and avatar initials
+    // Populate admin display (server can replace this when rendering)
     (function populateAdmin(){
+      const ADMIN_NAME = 'John Doe';
       const el = document.getElementById('admin-name');
       const av = document.getElementById('admin-avatar');
       if (el) el.textContent = ADMIN_NAME;
@@ -513,14 +368,15 @@
         const initials = parts.length >= 2 ? parts[0][0] + parts[1][0] : ADMIN_NAME.slice(0,2).toUpperCase();
         av.textContent = initials.toUpperCase();
       }
-      // wire header new meeting button to open scheduler (scroll into view)
-      const btn = document.getElementById('header-new-meeting');
-      if (btn) btn.addEventListener('click', () => {
-        const el = document.getElementById('meeting-scheduler');
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-      });
+    })();
+
+    // Small search helper: show/hide clear button
+    (function wireSearch(){
+      const input = document.getElementById('globalSearch');
+      const clear = document.getElementById('searchClear');
+      if(!input) return;
+      input.addEventListener('input', ()=>{ if(clear) clear.classList.toggle('hidden', !input.value.length); });
+      if(clear) clear.addEventListener('click', ()=>{ input.value=''; clear.classList.add('hidden'); input.focus(); });
     })();
   </script>
 </body>
