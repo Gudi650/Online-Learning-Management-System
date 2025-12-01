@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EduPortal — Messages</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>body{background:#F9FAFB}</style>
+  </head>
+  <body>
+    <div class="flex min-h-screen bg-gray-50">
+      <!-- Sidebar -->
+      <aside class="w-64 bg-white border-r border-gray-200 min-h-screen flex flex-col">
+        <div class="p-6 border-b border-gray-200">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <span class="text-lg font-semibold text-gray-900">EduPortal</span>
+          </div>
+        </div>
+
+        <nav class="flex-1 p-4">
+          <ul class="space-y-1">
+            <li>
+              <a href="index.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-path="/index.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+                <span class="font-medium">Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="courses.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-path="/courses.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                <span class="font-medium">My Courses</span>
+              </a>
+            </li>
+            <li>
+              <a href="assignments.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-path="/assignments.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                <span class="font-medium">Assignments</span>
+              </a>
+            </li>
+            <li>
+              <a href="schedule.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-path="/schedule.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                <span class="font-medium">Schedule</span>
+              </a>
+            </li>
+            <li>
+              <a href="grades.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-path="/grades.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                <span class="font-medium">Grades</span>
+              </a>
+            </li>
+            <li>
+              <a href="messages.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-path="/messages.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
+                <span class="font-medium">Messages</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="p-4 border-t border-gray-200">
+          <div class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+            <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold">A</div>
+            <div class="flex-1 min-w-0">
+              <p class="font-medium text-gray-900 truncate">Alex Johnson</p>
+              <p class="text-sm text-gray-500 truncate">alex@student.edu</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="flex-1 flex flex-col">
+        <header class="bg-white border-b border-gray-200"><div class="px-8 py-6"><div class="flex items-center justify-between"><div><h1 class="text-2xl font-bold text-gray-900">Messages</h1><p class="text-gray-600 mt-1">Communication with your instructors</p></div></div></div></header>
+
+        <main class="flex-1 p-8">
+          <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+            <div class="flex h-[600px]">
+              <!-- List -->
+              <div class="w-1/3 border-r border-gray-200 overflow-y-auto">
+                <div class="p-4 border-b border-gray-200">
+                  <button class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">Compose Message</button>
+                </div>
+                <div id="list">
+                  <div class="p-4 border-b border-gray-100 cursor-pointer transition-colors bg-white message-item" data-id="1" data-sender="Prof. Johnson" data-subject="Essay Feedback Available" data-preview="Your essay on modern poetry has been graded. Overall excellent work with thoughtful analysis..." data-time="2 hours ago" data-avatar="PJ">
+                    <div class="flex items-start gap-3">
+                      <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">PJ</div>
+                      <div class="flex-1 min-w-0">
+                        <div class="flex items-center justify-between mb-1"><p class="font-semibold text-sm truncate">Prof. Johnson</p><span class="w-2 h-2 bg-blue-600 rounded-full"></span></div>
+                        <p class="text-sm mb-1 truncate font-medium text-gray-900">Essay Feedback Available</p>
+                        <p class="text-xs text-gray-500 truncate">Your essay on modern poetry has been graded. Overall excellent work with thoughtful analysis...</p>
+                        <p class="text-xs text-gray-400 mt-1">2 hours ago</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="p-4 border-b border-gray-100 cursor-pointer transition-colors bg-white message-item" data-id="2" data-sender="Dr. Martinez" data-subject="Lab Session Rescheduled" data-preview="Due to a scheduling conflict, tomorrow's lab session will be moved to Friday at 2 PM..." data-time="5 hours ago" data-avatar="DM">
+                    <div class="flex items-start gap-3"><div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">DM</div><div class="flex-1 min-w-0"><div class="flex items-center justify-between mb-1"><p class="font-semibold text-sm truncate">Dr. Martinez</p><span class="w-2 h-2 bg-blue-600 rounded-full"></span></div><p class="text-sm mb-1 truncate font-medium text-gray-900">Lab Session Rescheduled</p><p class="text-xs text-gray-500 truncate">Due to a scheduling conflict, tomorrow's lab session will be moved to Friday at 2 PM...</p><p class="text-xs text-gray-400 mt-1">5 hours ago</p></div></div>
+                  </div>
+
+                  <div class="p-4 border-b border-gray-100 cursor-pointer transition-colors bg-gray-50 message-item" data-id="3" data-sender="Prof. Chen" data-subject="Office Hours This Week" data-preview="I will be holding extended office hours this week to help with the upcoming exam..." data-time="1 day ago" data-avatar="PC">
+                    <div class="flex items-start gap-3"><div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">PC</div><div class="flex-1 min-w-0"><div class="flex items-center justify-between mb-1"><p class="font-semibold text-sm truncate text-gray-600">Prof. Chen</p></div><p class="text-sm mb-1 truncate text-gray-600">Office Hours This Week</p><p class="text-xs text-gray-500 truncate">I will be holding extended office hours this week to help with the upcoming exam...</p><p class="text-xs text-gray-400 mt-1">1 day ago</p></div></div>
+                  </div>
+
+                  <div class="p-4 border-b border-gray-100 cursor-pointer transition-colors bg-gray-50 message-item" data-id="4" data-sender="Dr. Williams" data-subject="Research Paper Guidelines" data-preview="Please find attached the detailed guidelines for your research paper due next month..." data-time="2 days ago" data-avatar="DW">
+                    <div class="flex items-start gap-3"><div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">DW</div><div class="flex-1 min-w-0"><div class="flex items-center justify-between mb-1"><p class="font-semibold text-sm truncate text-gray-600">Dr. Williams</p></div><p class="text-sm mb-1 truncate text-gray-600">Research Paper Guidelines</p><p class="text-xs text-gray-500 truncate">Please find attached the detailed guidelines for your research paper due next month...</p><p class="text-xs text-gray-400 mt-1">2 days ago</p></div></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="flex-1 flex flex-col" id="content-area">
+                <div class="flex-1 flex items-center justify-center text-gray-400"><div class="text-center"><svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg><p>Select a message to read</p></div></div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      (function(){
+        const links = document.querySelectorAll('.nav-link');
+        const path = '/' + (location.pathname.split('/').pop() || 'index.html');
+        links.forEach(a => { if(a.dataset.path === path) a.classList.add('bg-blue-50','text-blue-700'); });
+      })();
+
+      // messages selection
+      document.querySelectorAll('.message-item').forEach(item => {
+        item.addEventListener('click', () => {
+          document.querySelectorAll('.message-item').forEach(m=>m.classList.remove('bg-blue-50'));
+          item.classList.add('bg-blue-50');
+          const sender = item.dataset.sender;
+          const subject = item.dataset.subject;
+          const preview = item.dataset.preview;
+          const time = item.dataset.time;
+          const avatar = item.dataset.avatar;
+          const content = `\n            <div class="p-6 border-b border-gray-200">\n              <div class="flex items-start gap-4">\n                <div class=\"w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold\">${avatar}</div>\n                <div class=\"flex-1\">\n                  <h3 class=\"font-semibold text-gray-900\">${subject}</h3>\n                  <p class=\"text-sm text-gray-600 mt-1\">From: ${sender}</p>\n                  <p class=\"text-xs text-gray-400 mt-1\">${time}</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"flex-1 p-6 overflow-y-auto\">\n              <p class=\"text-gray-700 leading-relaxed\">${preview}</p>\n            </div>\n            <div class=\"p-4 border-t border-gray-200\">\n              <button class=\"px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors\">Reply</button>\n            </div>\n          `;
+          document.getElementById('content-area').innerHTML = content;
+        });
+      });
+    </script>
+  </body>
+</html>

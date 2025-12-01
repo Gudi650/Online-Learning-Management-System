@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EduPortal — Dashboard</title>
+    <!-- Tailwind via CDN for static pages -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body { background-color: #F9FAFB; }
+    </style>
+  </head>
+  <body>
+    <div class="flex min-h-screen bg-gray-50">
+      <!-- Sidebar -->
+      <aside class="w-64 bg-white border-r border-gray-200 min-h-screen flex flex-col">
+        <div class="p-6 border-b border-gray-200">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <span class="text-lg font-semibold text-gray-900">EduPortal</span>
+          </div>
+        </div>
+
+        <nav class="flex-1 p-4">
+          <ul class="space-y-1">
+            <li>
+              <a href="index.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-path="/index.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+                <span class="font-medium">Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="courses.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-path="/courses.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                <span class="font-medium">My Courses</span>
+              </a>
+            </li>
+            <li>
+              <a href="assignments.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-path="/assignments.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                <span class="font-medium">Assignments</span>
+              </a>
+            </li>
+            <li>
+              <a href="schedule.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-path="/schedule.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                <span class="font-medium">Schedule</span>
+              </a>
+            </li>
+            <li>
+              <a href="grades.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-path="/grades.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                <span class="font-medium">Grades</span>
+              </a>
+            </li>
+            <li>
+              <a href="messages.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-path="/messages.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
+                <span class="font-medium">Messages</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="p-4 border-t border-gray-200">
+          <div class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+            <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold">A</div>
+            <div class="flex-1 min-w-0">
+              <p class="font-medium text-gray-900 truncate">Alex Johnson</p>
+              <p class="text-sm text-gray-500 truncate">alex@student.edu</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <div class="flex-1 flex flex-col">
+        <header class="bg-white border-b border-gray-200">
+          <div class="px-8 py-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <h1 class="text-2xl font-bold text-gray-900">Welcome back, Alex!</h1>
+                <p class="text-gray-600 mt-1">Wednesday, March 20, 2024</p>
+              </div>
+              <button class="p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <main class="flex-1 p-8">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 space-y-6">
+              <!-- Assignment Card -->
+              <div class="bg-white rounded-xl border border-gray-200 p-6">
+                <h2 class="text-lg font-semibold text-gray-900 mb-4">Upcoming Assignments</h2>
+                <div class="space-y-3">
+                  <div class="p-4 rounded-lg border transition-all hover:shadow-sm cursor-pointer">
+                    <div class="flex items-start justify-between gap-3">
+                      <div class="flex-1 min-w-0">
+                        <h3 class="font-medium text-gray-900 truncate">Essay: The Impact of Social Media</h3>
+                        <p class="text-sm text-gray-600 mt-1">English Literature</p>
+                      </div>
+                      <span class="text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap bg-amber-50 border border-amber-200 text-amber-900">Due Soon</span>
+                    </div>
+                    <div class="flex items-center gap-2 mt-3 text-sm text-gray-500">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                      <span>Today at 11:59 PM</span>
+                    </div>
+                  </div>
+
+                  <div class="p-4 rounded-lg border transition-all hover:shadow-sm cursor-pointer">
+                    <div class="flex items-start justify-between gap-3">
+                      <div class="flex-1 min-w-0">
+                        <h3 class="font-medium text-gray-900 truncate">Lab Report: Chemical Reactions</h3>
+                        <p class="text-sm text-gray-600 mt-1">Chemistry</p>
+                      </div>
+                      <span class="text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap bg-amber-50 border border-amber-200 text-amber-900">Due Soon</span>
+                    </div>
+                    <div class="flex items-center gap-2 mt-3 text-sm text-gray-500">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                      <span>Tomorrow at 3:00 PM</span>
+                    </div>
+                  </div>
+
+                  <div class="p-4 rounded-lg border transition-all hover:shadow-sm cursor-pointer">
+                    <div class="flex items-start justify-between gap-3">
+                      <div class="flex-1 min-w-0">
+                        <h3 class="font-medium text-gray-900 truncate">Problem Set 5</h3>
+                        <p class="text-sm text-gray-600 mt-1">Calculus II</p>
+                      </div>
+                      <span class="text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap bg-blue-50 border border-blue-200 text-blue-900">Upcoming</span>
+                    </div>
+                    <div class="flex items-center gap-2 mt-3 text-sm text-gray-500">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                      <span>Friday at 5:00 PM</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Grade Overview -->
+              <div class="bg-white rounded-xl border border-gray-200 p-6">
+                <h2 class="text-lg font-semibold text-gray-900 mb-4">Current Grades</h2>
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div class="flex-1">
+                      <p class="font-medium text-gray-900">English Literature</p>
+                      <div class="mt-2 bg-gray-100 rounded-full h-2 overflow-hidden">
+                        <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-full" style="width:92%"></div>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-3 ml-4">
+                      <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>
+                      <span class="text-2xl font-bold text-green-700">A-</span>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-between">
+                    <div class="flex-1">
+                      <p class="font-medium text-gray-900">Chemistry</p>
+                      <div class="mt-2 bg-gray-100 rounded-full h-2 overflow-hidden">
+                        <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-full" style="width:87%"></div>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-3 ml-4">
+                      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14" /></svg>
+                      <span class="text-2xl font-bold text-blue-700">B+</span>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-between">
+                    <div class="flex-1">
+                      <p class="font-medium text-gray-900">Calculus II</p>
+                      <div class="mt-2 bg-gray-100 rounded-full h-2 overflow-hidden">
+                        <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-full" style="width:95%"></div>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-3 ml-4">
+                      <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>
+                      <span class="text-2xl font-bold text-green-700">A</span>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-between">
+                    <div class="flex-1">
+                      <p class="font-medium text-gray-900">World History</p>
+                      <div class="mt-2 bg-gray-100 rounded-full h-2 overflow-hidden">
+                        <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-full" style="width:83%"></div>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-3 ml-4">
+                      <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+                      <span class="text-2xl font-bold text-amber-700">B</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              <!-- Today's Schedule -->
+              <div class="bg-white rounded-xl border border-gray-200 p-6">
+                <h2 class="text-lg font-semibold text-gray-900 mb-4">Today's Schedule</h2>
+                <div class="space-y-3">
+                  <div class="p-4 rounded-lg border bg-gray-50 border-gray-200">
+                    <div class="flex items-start justify-between gap-3">
+                      <div class="flex-1">
+                        <div class="flex items-center gap-2">
+                          <h3 class="font-medium text-gray-900">English Literature</h3>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-1">Prof. Johnson</p>
+                      </div>
+                      <span class="text-sm font-medium text-gray-900">9:00 AM</span>
+                    </div>
+                    <div class="flex items-center gap-2 mt-3 text-sm text-gray-500">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                      <span>Building A, Room 204</span>
+                    </div>
+                  </div>
+
+                  <div class="p-4 rounded-lg border bg-blue-50 border-blue-200">
+                    <div class="flex items-start justify-between gap-3">
+                      <div class="flex-1">
+                        <div class="flex items-center gap-2">
+                          <h3 class="font-medium text-gray-900">Chemistry</h3>
+                          <span class="text-xs font-medium px-2 py-1 rounded-full bg-blue-100 text-blue-700">Next</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-1">Dr. Martinez</p>
+                      </div>
+                      <span class="text-sm font-medium text-gray-900">11:00 AM</span>
+                    </div>
+                    <div class="flex items-center gap-2 mt-3 text-sm text-gray-500">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                      <span>Science Lab 3</span>
+                    </div>
+                  </div>
+
+                  <div class="p-4 rounded-lg border bg-gray-50 border-gray-200">
+                    <div class="flex items-start justify-between gap-3">
+                      <div class="flex-1">
+                        <div class="flex items-center gap-2">
+                          <h3 class="font-medium text-gray-900">Calculus II</h3>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-1">Prof. Chen</p>
+                      </div>
+                      <span class="text-sm font-medium text-gray-900">2:00 PM</span>
+                    </div>
+                    <div class="flex items-center gap-2 mt-3 text-sm text-gray-500">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                      <span>Math Building, Room 101</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Actions -->
+              <div class="bg-white rounded-xl border border-gray-200 p-6">
+                <h2 class="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h2>
+                <div class="grid grid-cols-2 gap-3">
+                  <button class="bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-lg transition-all hover:shadow-md flex flex-col items-center justify-center gap-2 text-center">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" /></svg>
+                    <span class="text-sm font-medium">Submit Assignment</span>
+                  </button>
+
+                  <button class="bg-purple-500 hover:bg-purple-600 text-white p-4 rounded-lg transition-all hover:shadow-md flex flex-col items-center justify-center gap-2 text-center">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                    <span class="text-sm font-medium">View Materials</span>
+                  </button>
+
+                  <button class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-lg transition-all hover:shadow-md flex flex-col items-center justify-center gap-2 text-center">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <span class="text-sm font-medium">Ask Question</span>
+                  </button>
+
+                  <button class="bg-amber-500 hover:bg-amber-600 text-white p-4 rounded-lg transition-all hover:shadow-md flex flex-col items-center justify-center gap-2 text-center">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                    <span class="text-sm font-medium">Join Office Hours</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      // highlight active nav link based on current filename
+      (function(){
+        const links = document.querySelectorAll('.nav-link');
+        const path = '/' + (location.pathname.split('/').pop() || 'index.html');
+        links.forEach(a => {
+          if(a.dataset.path === path) {
+            a.classList.add('bg-blue-50','text-blue-700');
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

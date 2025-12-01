@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EduPortal — Assignments</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>body{background:#F9FAFB}</style>
+  </head>
+  <body>
+    <div class="flex min-h-screen bg-gray-50">
+      <!-- Sidebar -->
+      <aside class="w-64 bg-white border-r border-gray-200 min-h-screen flex flex-col">
+        <div class="p-6 border-b border-gray-200">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <span class="text-lg font-semibold text-gray-900">EduPortal</span>
+          </div>
+        </div>
+
+        <nav class="flex-1 p-4">
+          <ul class="space-y-1">
+            <li>
+              <a href="index.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-path="/index.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+                <span class="font-medium">Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="courses.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-path="/courses.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                <span class="font-medium">My Courses</span>
+              </a>
+            </li>
+            <li>
+              <a href="assignments.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-path="/assignments.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                <span class="font-medium">Assignments</span>
+              </a>
+            </li>
+            <li>
+              <a href="schedule.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-path="/schedule.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                <span class="font-medium">Schedule</span>
+              </a>
+            </li>
+            <li>
+              <a href="grades.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-path="/grades.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                <span class="font-medium">Grades</span>
+              </a>
+            </li>
+            <li>
+              <a href="messages.html" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-path="/messages.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
+                <span class="font-medium">Messages</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="p-4 border-t border-gray-200">
+          <div class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+            <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold">A</div>
+            <div class="flex-1 min-w-0">
+              <p class="font-medium text-gray-900 truncate">Alex Johnson</p>
+              <p class="text-sm text-gray-500 truncate">alex@student.edu</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="flex-1 flex flex-col">
+        <header class="bg-white border-b border-gray-200">
+          <div class="px-8 py-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <h1 class="text-2xl font-bold text-gray-900">Assignments</h1>
+                <p class="text-gray-600 mt-1">Track and submit your course assignments</p>
+              </div>
+              <div></div>
+            </div>
+          </div>
+        </header>
+
+        <main class="flex-1 p-8">
+          <!-- Filter Tabs -->
+          <div class="mb-6">
+            <div class="flex gap-2 mb-6 border-b border-gray-200" id="tabs">
+              <button data-filter="all" class="tab px-4 py-2 font-medium capitalize text-blue-600 border-b-2 border-blue-600">all</button>
+              <button data-filter="pending" class="tab px-4 py-2 font-medium capitalize text-gray-600 hover:text-gray-900">pending</button>
+              <button data-filter="submitted" class="tab px-4 py-2 font-medium capitalize text-gray-600 hover:text-gray-900">submitted</button>
+              <button data-filter="graded" class="tab px-4 py-2 font-medium capitalize text-gray-600 hover:text-gray-900">graded</button>
+            </div>
+          </div>
+
+          <div class="space-y-4" id="assignments-list">
+            <!-- pending item -->
+            <div class="assignment-item pending bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex-1">
+                  <div class="flex items-center gap-3 mb-2">
+                    <div class="w-1 h-12 bg-blue-500 rounded-full"></div>
+                    <div>
+                      <h3 class="font-semibold text-gray-900">Essay: The Impact of Social Media</h3>
+                      <p class="text-sm text-gray-600">English Literature</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-3 text-sm text-gray-500 ml-4">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    <span>Due: Today at 11:59 PM</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="px-3 py-1 text-xs font-medium bg-amber-100 text-amber-700 rounded-full">Pending</span>
+                  <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Submit</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- another pending -->
+            <div class="assignment-item pending bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex-1">
+                  <div class="flex items-center gap-3 mb-2">
+                    <div class="w-1 h-12 bg-green-500 rounded-full"></div>
+                    <div>
+                      <h3 class="font-semibold text-gray-900">Lab Report: Chemical Reactions</h3>
+                      <p class="text-sm text-gray-600">Chemistry</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-3 text-sm text-gray-500 ml-4">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    <span>Due: Tomorrow at 3:00 PM</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="px-3 py-1 text-xs font-medium bg-amber-100 text-amber-700 rounded-full">Pending</span>
+                  <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Submit</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- submitted -->
+            <div class="assignment-item submitted bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex-1">
+                  <div class="flex items-center gap-3 mb-2">
+                    <div class="w-1 h-12 bg-purple-500 rounded-full"></div>
+                    <div>
+                      <h3 class="font-semibold text-gray-900">Problem Set 5</h3>
+                      <p class="text-sm text-gray-600">Calculus II</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-3 text-sm text-gray-500 ml-4">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    <span>Due: Friday at 5:00 PM</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="px-3 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-full">Submitted</span>
+                  <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200">View Submission</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- graded -->
+            <div class="assignment-item graded bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex-1">
+                  <div class="flex items-center gap-3 mb-2">
+                    <div class="w-1 h-12 bg-amber-500 rounded-full"></div>
+                    <div>
+                      <h3 class="font-semibold text-gray-900">Chapter 8 Summary</h3>
+                      <p class="text-sm text-gray-600">World History</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-3 text-sm text-gray-500 ml-4">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    <span>Due: Last Week</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="px-3 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">Graded: A-</span>
+                  <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200">View Feedback</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      // nav highlight
+      (function(){
+        const links = document.querySelectorAll('.nav-link');
+        const path = '/' + (location.pathname.split('/').pop() || 'index.html');
+        links.forEach(a => { if(a.dataset.path === path) a.classList.add('bg-blue-50','text-blue-700'); });
+      })();
+
+      // simple filter tabs
+      document.querySelectorAll('.tab').forEach(btn => {
+        btn.addEventListener('click', e => {
+          document.querySelectorAll('.tab').forEach(t=>t.classList.remove('text-blue-600','border-b-2','border-blue-600'));
+          btn.classList.add('text-blue-600','border-b-2','border-blue-600');
+          const f = btn.dataset.filter;
+          document.querySelectorAll('.assignment-item').forEach(item => {
+            item.style.display = f === 'all' ? '' : (item.classList.contains(f) ? '' : 'none');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
